@@ -40,13 +40,13 @@ int main(int argc, char* argv[])
     }
     
     printf("all lower: ");
-    for (int i = 0; i < strlen(argv[1]); i++) {
+    for (int i = 0 int len = strlen(argv[1]); i < len; i++) {
         printf("%c", tolower(argv[1][i]));
     }
     printf("\n");
     
     printf("all upper: ");
-    for (int i = 0; i < strlen(argv[1]); i++) {
+    for (int i = 0, int j = strlen(argv[1]); i< len; i++) {
         printf("%c", toupper(argv[1][i]));
     }
     printf("\n");
