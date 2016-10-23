@@ -1,6 +1,8 @@
-# Section 8 - Python
+# Section 8
 
-## Basics
+### Python
+
+### Basics
 
 Python is a much newer language than C. C was first released in 1972, Python in 1991.
 
@@ -8,12 +10,12 @@ Python is an interpreted language. This means that the code never gets compiled,
 
 In CS50 we use Python 3.
 
-## Syntax basics:
+### Syntax basics:
 Python doesn't use curly braces or semicolons. Instead scope is determined by **indentation**. More on this later.
 
 In Python `#` is used for comments instead of `//`.
 
-## Variables
+### Variables
 
 In Python you don't have to specify a variables type and they are initialized by declaration only.
 
@@ -41,7 +43,7 @@ a = 'a'
 a = "Now it's a string! what?!"
 ```
 
-## Printing
+### Printing
 Instead of using `printf`, you use the print function in Python.
 
 In C:
@@ -61,7 +63,7 @@ print(a)
 print(b)
 ```
 
-The print method automatically adds a newline at the end. If you don't want that, you can use the following: `print("a string", end='')`, This wil print out "a string" without a newline at the end. This format can also be used to stick other stuff at the end of your print statement. For example `print("a string", end='c') will print out "a stringc" without a newline in the end.
+The print method automatically adds a newline at the end. If you don't want that, you can use the following: `print("a string", end='')`, This wil print out "a string" without a newline at the end. This format can also be used to stick other stuff at the end of your print statement. For example `print("a string", end='c')` will print out "a stringc" without a newline in the end.
 
 If you want to print out multiple variables at once, you can use multiple approaches:
 
@@ -84,14 +86,14 @@ print(', ', end = '')
 print(c)
 
 # Method 2
-# Here we use the + operator to concatenate strings and the str function to convert other variables to strings. 
+# Here we use the + operator to concatenate strings and the str function to convert other variables to strings.
 print(str(a) + ", " + str(c))
 
 # Method 3
 print("{0}, {1}".format(a, c))
 ```
 
-## Conditionals
+### Conditionals
 
 `&&`, `||` are replaced with `and`, `or`. ! is replaced with `not`.
 
@@ -157,7 +159,7 @@ Ex:
 isLetter = True if myLetter.isAlpha() else False
 ```
 
-## Loops
+### Loops
 
 There are two main loops in Python: `while` and `for`
 
@@ -229,11 +231,11 @@ for i, num in vals:
     print("the element at index {0} is {1}".format(i, num)
 ```
 
-## Lists
+### Lists
 
 Lists are the Python version of Arrays. They are a lot more powerful, since they can be dynamically grown or shrunk. They can also contain variables of multiple types.
 
-### Initialization
+#### Initialization
 
 To initialize an array you use the square brackets:
 
@@ -259,7 +261,7 @@ Note: We use `_` in the for loop, because we don't actually need the variable.
 
 A list can also be initialized using the `list()` function: `vals = list()`, will initialize vals as an empty list.
 
-### Appending, inserting and concatenating
+#### Appending, inserting and concatenating
 
 you can add a value to the end of the list using the append method.
 
@@ -292,7 +294,7 @@ d = a.append(b)
 
 Notice the difference between appending and adding two lists.
 
-### Length
+#### Length
 
 To get the length of a list, you can use the len function:
 ```
@@ -300,7 +302,7 @@ a = [1,2,3,4]
 b = len(a)
 # b is now 4
 ```
-### Sublists
+#### Sublists
 
 In order to get a sublist of a list you can use the `:` operator inside square brackets.
 
@@ -319,7 +321,7 @@ d = a[2:4]
 # d is now [6,7]
 ```
 
-## Tuples
+### Tuples
 Tuples are a new kind of data type. They can hold multiple values, but are immutable. This means that you cannot change the values in a tuple once assigned. Tuples are declared using parenthesis.
 
 Ex:
@@ -343,7 +345,7 @@ for name, val in constants:
     print("the value of {0} is {1}".format(name, val))
 ```
 
-## Dictionaries
+### Dictionaries
 Python has built in associative arrays called dictionaries. These allow you bind certain values to keys. Think of a dictionary as a list, where you can use any data type as the index, instead of just integers.
 
 Dictionaries are declared using curly braces.
@@ -376,7 +378,7 @@ for place, status in weather.items():
     print("The weather in {0} is {1}.format(place, status))
 ```
 
-## Functions
+### Functions
 
 Function are declared using the `def` keyword.
 
@@ -408,15 +410,15 @@ if __name__ == "__main__":
     main()
 ```
 
-## Importing libraries
+### Importing libraries
 
 Instead of using `#include`, in Python you use the `import` keyword. There is a CS 50 package (The python term for a library) for python, that you may or may not want to use. To include it write `import cs50` at the top of your file.
 
-## Running
+### Running
 
 To run a python file, write `python file.py`, where `file.py` is a placeholder for the name of your file.
 
-## Command line arguments
+### Command line arguments
 
 In order to use command line arguments in python, you have to import the `sys` package and then you can access the command line arguments using sys.argv.
 
@@ -437,7 +439,7 @@ b
 ```
 
 
-## User input
+### User input
 
 You can get input from the user using the input() method
 
@@ -447,8 +449,140 @@ print("the square of your number is {0}.format(a**2))
 ```
 This will print out "Input a number" in the console, wait for the user to input a number and then print out the square of the number.
 
-## Challenge
+### Challenge
 
-1. Implement Mario more comfy from Pset 1 in Python
+1. Implement Mario more comfy from pset 1 in Python
 2. Implement Caesar in Python
 
+
+## Classes and Objects
+
+**Objects** are similar to **structs** in C, but besides holding values, they can also have methods associated with them.
+
+**Classes** are what define what values an object will hold and what methods it will have associated with it. Think of a **class** as the recipe you use to make an **object**.
+
+Classes can have **private** and **public** methods.
+
+**Public** methods are methods that the user is expected to call.
+
+**Private** methods are methods that the user should never call. These methods can for example be called by other methods internally.
+
+### Classes in Python
+
+In Python, classes are declared using the `class` keyword.
+
+Every class must minimally have a `__init__` method, that defines how an object of this class should be initialized.
+
+Note the `__` before and after the name of the method. In python you surround a method name with double underscores, to indicate that it is a private method.
+
+Every method in a class, must minimally take `self` as a parameter. This allows the object to manipulate values within in. When calling a method, the `self` parameter is omitted as it is assumed that it's the object itself.
+
+Class names in Python start with an uppercase by convention.
+
+It's good style in Python to keep class declarations in separate files.
+
+Ex:
+
+In `student.py`:
+```
+class Student():
+
+    def __init__(self, name):
+        self.name = name
+        self.gradeSum = 0
+        self.numGrades = 0
+
+    def getGpa(self):
+        return self.gradeSum/self.numGrades
+
+    def addGrade(self, grade):
+        if grade == 'A':
+            self.gradeSum += 4
+            self.numGrades += 1
+        elif grade == 'B':
+            self.gradeSum += 3
+            self.numGrades += 1
+        elif grade == 'C':
+            self.gradeSum += 2
+            self.numGrades += 1
+        elif grade == 'D':
+            self.gradeSum += 1
+            self.numGrades += 1
+        elif grade == 'E' or grade == 'F':
+            self.numGrades += 1
+        else:
+            print("Invalid grade")
+
+    def getName(self):
+        return self.name
+```
+
+In `grades.py`:
+
+```
+from student import Student
+
+tim = Student("Tim")
+lisa = Student("Lisa")
+
+tim.addGrade('A')
+tim.addGrade('B')
+tim.addGrade('B')
+tim.addGrade('A')
+
+tim.addGrade('E')
+tim.addGrade('P')
+
+lisa.addGrade('C')
+lisa.addGrade('B')
+lisa.addGrade('A')
+lisa.addGrade('A')
+lisa.addGrade('A')
+lisa.addGrade('A')
+
+print("{0}'s GPA is: {1}".format(tim.getName(), tim.getGpa()))
+print("{0}'s GPA is: {1}".format(lisa.getName(), lisa.getGpa()))
+```
+
+## MVC
+
+**MVC** or Model-View-Controller is a paradigm used in web development to separate responsibilities between different files and abstract away parts of the site that the user does not need to see.
+
+**Model** - This is where the important data for the site lives, and it may be updated, referenced, or the like as part of the user experience. (Database)
+
+**View** - These are the pages the user sees when they are interacting with your site, usually based on interaction with the model. (How the page looks)
+
+**Controller** - This is where the so-called business logic of your site lives. Users may submit information to the controller, which will then decide what to present to the user. (Backend)
+
+They interact as follows:
+
+An **user** sends a request to the **controller**. the **controller** then queries the **model** for data. The **model** then transmits the data to the **view**, which then gets displayed to the **user**.
+
+This paradigm is good for security, as it keeps the user from directly accessing the model. With MVC, whenever a user wants to get info from the model (database) or put info into the model, then it has to go through a controller. As such, when done correctly, all of the interactions with the model are predefined. If we gave the user direct access to the model, then the user could for example delete all data in the model or steal all your users' data.
+
+### Permissions
+
+You can restrict which files someone can access. If your files are on a webserver, then you probably want to keep outside users from editing your files as well as even looking at your controller files.
+
+You can edit Permissions using `chmod`.
+
+Chmod Permissions are described using a 3 number combination, where the first number determines what **you** can do to the file, the second number determines what **your group** can do to the file and the third number represents what **The world** can do to the file.
+
+What the numbers represent are described by the following table:
+
+| Number | Read (r) | Write (w) | Execute (x) |
+| ------ |:--------:| ---------:| -----------:|
+| 0      | No       | No        | No          |
+| 1      | No       | No        | Yes         |
+| 2      | No       | Yes       | No          |
+| 3      | No       | Yes       | Yes         |
+| 4      | Yes      | No        | No          |
+| 5      | Yes      | No        | Yes         |
+| 6      | Yes      | Yes       | No          |
+| 7      | Yes      | Yes       | Yes         |
+
+For example the combination 732 would mean that **you** can read, write and execute the file, **Your group** can write and execute the file and the rest of the **world** can only write to the file.
+
+To set a permission for a file you would run `chmod <code> <filename>` in the terminal.
+
+For example, if you would want to give everyone full access to 'myfile.txt' (bad idea), you would run `chmod 777 myfile.txt`
