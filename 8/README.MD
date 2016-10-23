@@ -586,3 +586,6 @@ For example the combination 732 would mean that **you** can read, write and exec
 To set a permission for a file you would run `chmod <code> <filename>` in the terminal.
 
 For example, if you would want to give everyone full access to 'myfile.txt' (bad idea), you would run `chmod 777 myfile.txt`
+
+
+*These section notes are heavily based on slides by Doug Lloyd*
