@@ -1,4 +1,4 @@
-# tamm-cs50-section
+# Timothy Tamm's CS 50 section
 
 Section materials for my CS 50 section in Fall 2016
 
