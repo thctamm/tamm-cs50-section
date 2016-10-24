@@ -227,7 +227,7 @@ for num in vals:
 If you want to iterate over a list, but also get the current index, then you can use the `enumerate` method:
 ```
 vals = [4, 5, 6, 1, 2, 4, 2, 44, 5]
-for i, num in vals:
+for i, num in enumerate(vals):
     print("the element at index {} is {}".format(i, num)
 ```
 

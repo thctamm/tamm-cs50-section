@@ -2,6 +2,7 @@ from student import Student
 
 tim = Student("Tim")
 lisa = Student("Lisa")
+print(tim.gradeSum)
 
 tim.addGrade('A')
 tim.addGrade('B')
