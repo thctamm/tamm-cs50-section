@@ -7,3 +7,4 @@ Section materials for my CS 50 section in Fall 2016
 [Section 4](4)  
 [Section 5](5)  
 [Section 8](8)  
+[Section 9](9)  
